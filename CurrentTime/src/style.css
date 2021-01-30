@@ -1,0 +1,48 @@
+body {
+	background-image: url('./img/wallpaper.jpg');
+}
+.main-div {
+	width: 100%;
+	height: 97vh;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-content: center;
+	font-family: 'Kabrio Alternate ExtBd';
+	font-size: 50px;
+}
+.title-text {
+	align-self: center;
+	color: white;
+}
+.clock {
+	display: flex;
+	align-content: center;
+	padding-top: 5%;
+	color: white;
+}
+.number-content {
+	display: flex;
+	width: 90px;
+	justify-content: space-around;
+	fill: black;
+}
+.square {
+	display: flex;
+	background-color: white;
+	color: black;
+	width: 40px;
+	border-radius: 4px;
+}
+
+@font-face {
+	font-family: 'Kabrio Alternate ExtBd';
+	src: url('./fonts/KabrioAlternate-ExtBdIta.eot');
+	src: local('Kabrio Alternate ExtBd Ita'), local('KabrioAlternate-ExtBdIta'),
+		url('./fonts/KabrioAlternate-ExtBdIta.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/KabrioAlternate-ExtBdIta.woff2') format('woff2'),
+		url('./fonts/KabrioAlternate-ExtBdIta.woff') format('woff'),
+		url('./fonts/KabrioAlternate-ExtBdIta.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}

@@ -1,14 +1,33 @@
 const reactComponent = React.Component;
-const createElement = React.createElement;
+const ce = React.createElement;
+
+class ValidityForm {
+  static isFName;
+  static isLName;
+  static isNumber;
+  static isEmail;
+  constructor(){
+    this.isFName = false;
+    this.isLName = false;
+    this.isNumber = false;
+    this.isEmail = false;
+  }
+  static isForm () {
+    if (this.isFName) {
+      return true;
+    }
+    else return false;
+  }
+}
 
 class App extends reactComponent {
 	render() {
-		return createElement(
+		return ce(
 			'div',
 			{
 				className: 'form',
 			},
-			createElement(
+			ce(
 				'h1',
 				{
 					key: 'headerForm',
@@ -17,14 +36,14 @@ class App extends reactComponent {
 				'Form'
 			),
 			[
-				createElement(
+				ce(
 					'div',
 					{
-						key: `headingFirstNameContainer`,
+						key: `firstNameContainer`,
 						className: `element-container`,
 					},
 					[
-						createElement(
+						ce(
 							'div',
 							{
 								key: `headingFirstNameInput`,
@@ -32,7 +51,7 @@ class App extends reactComponent {
 							},
 							'First Name'
 						),
-						createElement('input', {
+						ce('input', {
 							key: `FirstNameInput`,
 							className: `heading-input`,
 							onInput: (event) => {
@@ -42,14 +61,14 @@ class App extends reactComponent {
 						}),
 					]
 				),
-				createElement(
+				ce(
 					'div',
 					{
-						key: `headingLastNameContainer`,
+						key: `lastNameContainer`,
 						className: `element-container`,
 					},
 					[
-						createElement(
+						ce(
 							'div',
 							{
 								key: `headingLastNameInput`,
@@ -57,20 +76,20 @@ class App extends reactComponent {
 							},
 							'Last Name'
 						),
-						createElement('input', {
+						ce('input', {
 							key: `LastNameInput`,
 							className: `heading-input`,
 						}),
 					]
 				),
-				createElement(
+				ce(
 					'div',
 					{
-						key: `headingNumberContainer`,
+						key: `numberContainer`,
 						className: `element-container`,
 					},
 					[
-						createElement(
+						ce(
 							'div',
 							{
 								key: `headingNumberInput`,
@@ -78,20 +97,20 @@ class App extends reactComponent {
 							},
 							'Number'
 						),
-						createElement('input', {
+						ce('input', {
 							key: `NumberInput`,
 							className: `heading-input`,
 						}),
 					]
 				),
-				createElement(
+				ce(
 					'div',
 					{
-						key: `headingEmailContainer`,
+						key: `emailContainer`,
 						className: `element-container`,
 					},
 					[
-						createElement(
+						ce(
 							'div',
 							{
 								key: `headingEmailInput`,
@@ -99,7 +118,7 @@ class App extends reactComponent {
 							},
 							'Email'
 						),
-						createElement('input', {
+						ce('input', {
 							key: `EmailInput`,
 							className: `heading-input`,
 						}),
@@ -110,4 +129,4 @@ class App extends reactComponent {
 	}
 }
 
-ReactDOM.render(createElement(App), document.querySelector('.application'));
+ReactDOM.render(ce(App), document.querySelector('.application'));

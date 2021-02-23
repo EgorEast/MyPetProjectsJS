@@ -1,0 +1,33 @@
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #333;
+
+.app {
+	font: 100% $font-stack;
+	color: $primary-color;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	input {
+		border-color: black;
+		font-size: 85%;
+		background: white;
+	}
+
+	button {
+		border-color: black;
+		width: 70px;
+
+		&:disabled {
+			display: none;
+		}
+	}
+}
+
+.element-container {}
+
+.form-header {
+	font-size: 300%;
+	font-weight: bold;
+
+}

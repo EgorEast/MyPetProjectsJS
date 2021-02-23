@@ -1,1 +1,29 @@
+.app {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
 
+.app input {
+  border-color: black;
+  font-size: 85%;
+  background: white;
+}
+
+.app button {
+  border-color: black;
+  width: 70px;
+}
+
+.app button:disabled {
+  display: none;
+}
+
+.form-header {
+  font-size: 300%;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

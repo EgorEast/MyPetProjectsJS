@@ -39,228 +39,247 @@ class App extends reactComponent {
 			return ce(
 				'div',
 				{
-					key: 'form',
-					className: 'form',
+					key: 'app',
+					className: 'app',
 				},
-				ce(
-					'h1',
-					{
-						key: 'headerForm',
-						className: 'form-header',
-					},
-					'Form'
-				),
 				[
+					ce('div', {
+						key: 'leftRegion',
+						className: 'left-region',
+					}),
 					ce(
 						'div',
 						{
-							key: `firstNameContainer`,
-							className: `element-container`,
+							key: 'form',
+							className: 'form',
 						},
+						ce(
+							'div',
+							{
+								key: 'headerForm',
+								className: 'form-header',
+							},
+							'Form'
+						),
 						[
 							ce(
 								'div',
 								{
-									key: `headingFirstNameInput`,
-									className: `heading-input`,
+									key: `firstNameContainer`,
+									className: `element-container`,
 								},
-								'First Name'
-							),
-							ce('input', {
-								key: `FirstNameInput`,
-								className: `heading-input`,
-								placeholder: 'Alex',
-								value: this.state.firstNameField,
-								onChange: (event) => {
-									this.validate(
-										/^[A-Z][a-z]+$/,
-										event.target.value,
-										'firstNameField',
+								[
+									ce(
+										'div',
+										{
+											key: `headingFirstNameInput`,
+											className: `heading-input`,
+										},
 										'First Name'
-									);
-								},
-							}),
-						]
-					),
-					ce(
-						'div',
-						{
-							key: `lastNameContainer`,
-							className: `element-container`,
-						},
-						[
+									),
+									ce('input', {
+										key: `FirstNameInput`,
+										className: `heading-input`,
+										placeholder: 'Alex',
+										value: this.state.firstNameField,
+										onChange: (event) => {
+											this.validate(
+												/^[A-Z][a-z]+$/,
+												event.target.value,
+												'firstNameField',
+												'First Name'
+											);
+										},
+									}),
+								]
+							),
 							ce(
 								'div',
 								{
-									key: `headingLastNameInput`,
-									className: `heading-input`,
+									key: `lastNameContainer`,
+									className: `element-container`,
 								},
-								'Last Name'
-							),
-							ce('input', {
-								key: `LastNameInput`,
-								className: `heading-input`,
-								placeholder: 'Sizov',
-								value: this.state.lastNameField,
-								onChange: (event) => {
-									this.validate(
-										/^[A-Z][a-z]+$/,
-										event.target.value,
-										'lastNameField',
+								[
+									ce(
+										'div',
+										{
+											key: `headingLastNameInput`,
+											className: `heading-input`,
+										},
 										'Last Name'
-									);
-								},
-							}),
-						]
-					),
-					ce(
-						'div',
-						{
-							key: `numberContainer`,
-							className: `element-container`,
-						},
-						[
+									),
+									ce('input', {
+										key: `LastNameInput`,
+										className: `heading-input`,
+										placeholder: 'Sizov',
+										value: this.state.lastNameField,
+										onChange: (event) => {
+											this.validate(
+												/^[A-Z][a-z]+$/,
+												event.target.value,
+												'lastNameField',
+												'Last Name'
+											);
+										},
+									}),
+								]
+							),
 							ce(
 								'div',
 								{
-									key: `headingPhoneNumberInput`,
-									className: `heading-input`,
+									key: `numberContainer`,
+									className: `element-container`,
 								},
-								'Phone Number'
-							),
-							ce('input', {
-								key: `PhoneNumberInput`,
-								className: `heading-input`,
-								placeholder: '+79781010101',
-								value: this.state.phoneNumberField,
-								onChange: (event) => {
-									this.validate(
-										/^\+\d+/,
-										event.target.value,
-										'phoneNumberField',
+								[
+									ce(
+										'div',
+										{
+											key: `headingPhoneNumberInput`,
+											className: `heading-input`,
+										},
 										'Phone Number'
-									);
-								},
-							}),
-						]
-					),
-					ce(
-						'div',
-						{
-							key: `emailContainer`,
-							className: `element-container`,
-						},
-						[
+									),
+									ce('input', {
+										key: `PhoneNumberInput`,
+										className: `heading-input`,
+										placeholder: '+79781010101',
+										value: this.state.phoneNumberField,
+										onChange: (event) => {
+											this.validate(
+												/^\+\d+/,
+												event.target.value,
+												'phoneNumberField',
+												'Phone Number'
+											);
+										},
+									}),
+								]
+							),
 							ce(
 								'div',
 								{
-									key: `headingEmailInput`,
-									className: `heading-input`,
+									key: `emailContainer`,
+									className: `element-container`,
 								},
-								'Email'
-							),
-							ce('input', {
-								key: `EmailInput`,
-								className: `heading-input`,
-								placeholder: 'my.email@gmail.com',
-								value: this.state.emailField,
-								onChange: (event) => {
-									this.validate(
-										/^.+@.+\.[a-z]+$/,
-										event.target.value,
-										'emailField',
+								[
+									ce(
+										'div',
+										{
+											key: `headingEmailInput`,
+											className: `heading-input`,
+										},
 										'Email'
-									);
-								},
-							}),
-						]
-					),
-					ce(
-						'div',
-						{
-							key: `passwordContainer`,
-							className: `element-container`,
-						},
-						[
+									),
+									ce('input', {
+										key: `EmailInput`,
+										className: `heading-input`,
+										placeholder: 'my.email@gmail.com',
+										value: this.state.emailField,
+										onChange: (event) => {
+											this.validate(
+												/^.+@.+\.[a-z]+$/,
+												event.target.value,
+												'emailField',
+												'Email'
+											);
+										},
+									}),
+								]
+							),
 							ce(
 								'div',
 								{
-									key: `headingPasswordInput`,
-									className: `heading-input`,
+									key: `passwordContainer`,
+									className: `element-container`,
 								},
-								'Password'
-							),
-							ce('input', {
-								key: `PasswordInput`,
-								className: `heading-input`,
-								placeholder: 'Alex343>',
-								value: this.state.passwordField,
-								type: 'password',
-								onChange: (event) => {
-									this.validate(
-										/[a-zA-Z0-9!@#$%^&*<>]{6,}/,
-										event.target.value,
-										'passwordField',
+								[
+									ce(
+										'div',
+										{
+											key: `headingPasswordInput`,
+											className: `heading-input`,
+										},
 										'Password'
-									);
-								},
-							}),
-						]
-					),
-					ce(
-						'div',
-						{
-							key: `repeatPasswordContainer`,
-							className: `element-container`,
-						},
-						[
+									),
+									ce('input', {
+										key: `PasswordInput`,
+										className: `heading-input`,
+										placeholder: 'Alex343>',
+										value: this.state.passwordField,
+										type: 'password',
+										onChange: (event) => {
+											this.validate(
+												/[a-zA-Z0-9!@#$%^&*<>]{6,}/,
+												event.target.value,
+												'passwordField',
+												'Password'
+											);
+										},
+									}),
+								]
+							),
 							ce(
 								'div',
 								{
-									key: `headingRepeatPasswordInput`,
-									className: `heading-input`,
+									key: `repeatPasswordContainer`,
+									className: `element-container`,
 								},
-								'Repeat Password'
+								[
+									ce(
+										'div',
+										{
+											key: `headingRepeatPasswordInput`,
+											className: `heading-input`,
+										},
+										'Repeat Password'
+									),
+									ce('input', {
+										key: `RepeatPasswordInput`,
+										className: `heading-input`,
+										placeholder: 'Alex343>',
+										value: this.state.repeatPasswordField,
+										type: 'password',
+										onChange: (event) => {
+											this.errorField =
+												event.target.value === this.state.passwordField
+													? null
+													: 'Repeat Password';
+											this.setState({
+												repeatPasswordField: event.target.value,
+											});
+										},
+									}),
+								]
 							),
-							ce('input', {
-								key: `RepeatPasswordInput`,
-								className: `heading-input`,
-								placeholder: 'Alex343>',
-								value: this.state.repeatPasswordField,
-								type: 'password',
-								onChange: (event) => {
-									this.errorField =
-										event.target.value === this.state.passwordField
-											? null
-											: 'Repeat Password';
-									this.setState({ repeatPasswordField: event.target.value });
+							ce(
+								'button',
+								{
+									key: `RegisterButton`,
+									className: `register-button`,
+									disabled: this.errorField || this.isValidForm(),
+									onClick: () => {
+										this.setState({ completedForm: true });
+									},
 								},
-							}),
-						]
+								'Register'
+							),
+						],
+						this.errorField &&
+							ce(
+								'div',
+								{
+									style: {
+										color: 'red',
+									},
+								},
+								`Invalid data in the ${this.errorField} field`
+							)
 					),
-					ce(
-						'button',
-						{
-							key: `RegisterButton`,
-							className: `register-button`,
-							disabled: this.errorField || this.isValidForm(),
-							onClick: () => {
-								this.setState({ completedForm: true });
-							},
-						},
-						'Register'
-					),
-				],
-				this.errorField &&
-					ce(
-						'div',
-						{
-							style: {
-								color: 'red',
-							},
-						},
-						`Invalid data in the ${this.errorField} field`
-					)
+					ce('div', {
+						key: 'rightRegion',
+						className: 'right-region',
+					}),
+				]
 			);
 		} else {
 			return ce(

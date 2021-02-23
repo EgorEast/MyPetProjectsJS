@@ -6,12 +6,12 @@ class App extends reactComponent {
 		super();
 		this.state = {
 			completedForm: false,
-			firstNameField: 'Eg',
-			lastNameField: 'Sl',
-			phoneNumberField: '+0',
-			emailField: 'a@r.g',
-			passwordField: '123456',
-			repeatPasswordField: '123456',
+			firstNameField: '',
+			lastNameField: '',
+			phoneNumberField: '',
+			emailField: '',
+			passwordField: '',
+			repeatPasswordField: '',
 			registerButton: true,
 		};
 
@@ -39,6 +39,7 @@ class App extends reactComponent {
 			return ce(
 				'div',
 				{
+					key: 'form',
 					className: 'form',
 				},
 				ce(
@@ -68,6 +69,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `FirstNameInput`,
 								className: `heading-input`,
+								placeholder: 'Alex',
 								value: this.state.firstNameField,
 								onChange: (event) => {
 									this.validate(
@@ -98,6 +100,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `LastNameInput`,
 								className: `heading-input`,
+								placeholder: 'Sizov',
 								value: this.state.lastNameField,
 								onChange: (event) => {
 									this.validate(
@@ -128,6 +131,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `PhoneNumberInput`,
 								className: `heading-input`,
+								placeholder: '+79781010101',
 								value: this.state.phoneNumberField,
 								onChange: (event) => {
 									this.validate(
@@ -158,6 +162,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `EmailInput`,
 								className: `heading-input`,
+								placeholder: 'my.email@gmail.com',
 								value: this.state.emailField,
 								onChange: (event) => {
 									this.validate(
@@ -188,6 +193,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `PasswordInput`,
 								className: `heading-input`,
+								placeholder: 'Alex343>',
 								value: this.state.passwordField,
 								type: 'password',
 								onChange: (event) => {
@@ -219,6 +225,7 @@ class App extends reactComponent {
 							ce('input', {
 								key: `RepeatPasswordInput`,
 								className: `heading-input`,
+								placeholder: 'Alex343>',
 								value: this.state.repeatPasswordField,
 								type: 'password',
 								onChange: (event) => {

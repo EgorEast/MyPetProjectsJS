@@ -1,10 +1,10 @@
 # Мои проекты
 
-## 1. [Часы](https://github.com/EgorEast/MyPetProjectsJS/tree/main/CurrentTime)
+## 1. [Часы](https://github.com/EgorEast/MyPetProjectsJS/tree/main/Projects/CurrentTime)
 
 Это простой проект, в котором я сделал упор больше на вёрстку в CSS и немного поработал с чистым JS.
 
-## 2. [Форма с валидацией](https://github.com/EgorEast/MyPetProjectsJS/tree/main/Form)
+## 2. [Форма с валидацией](https://github.com/EgorEast/MyPetProjectsJS/tree/main/Projects/Form)
 
 В этом проекте я работаю с элементами input и применяю регулярные выражения для валидации полей.
 

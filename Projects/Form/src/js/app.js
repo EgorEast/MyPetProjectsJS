@@ -2,22 +2,21 @@ const reactComponent = React.Component;
 const ce = React.createElement;
 
 class ValidityForm {
-  static isFName;
-  static isLName;
-  static isNumber;
-  static isEmail;
-  constructor(){
-    this.isFName = false;
-    this.isLName = false;
-    this.isNumber = false;
-    this.isEmail = false;
-  }
-  static isForm () {
-    if (this.isFName) {
-      return true;
-    }
-    else return false;
-  }
+	static isFName;
+	static isLName;
+	static isNumber;
+	static isEmail;
+	constructor() {
+		this.isFName = false;
+		this.isLName = false;
+		this.isNumber = false;
+		this.isEmail = false;
+	}
+	static isForm() {
+		if (this.isFName) {
+			return true;
+		} else return false;
+	}
 }
 
 class App extends reactComponent {
@@ -55,7 +54,10 @@ class App extends reactComponent {
 							key: `FirstNameInput`,
 							className: `heading-input`,
 							onInput: (event) => {
-								if (event.target.value.match()) {
+								const regexp = /^[A-Z][a-z]/g;
+								const value = event.target.value;
+								if (!value.match(regexp)) {
+									console.log(`${value} - ERROR!`);
 								}
 							},
 						}),
@@ -79,6 +81,13 @@ class App extends reactComponent {
 						ce('input', {
 							key: `LastNameInput`,
 							className: `heading-input`,
+							onInput: (event) => {
+								const regexp = /^[A-Z][a-z]/g;
+								const value = event.target.value;
+								if (!value.match(regexp)) {
+									console.log(`${value} - ERROR!`);
+								}
+							},
 						}),
 					]
 				),
@@ -100,6 +109,13 @@ class App extends reactComponent {
 						ce('input', {
 							key: `NumberInput`,
 							className: `heading-input`,
+							onInput: (event) => {
+								const regexp = /^\+\d+/g;
+								const value = event.target.value;
+								if (!value.match(regexp)) {
+									console.log(`${value} - ERROR!`);
+								}
+							},
 						}),
 					]
 				),
@@ -121,6 +137,13 @@ class App extends reactComponent {
 						ce('input', {
 							key: `EmailInput`,
 							className: `heading-input`,
+							onInput: (event) => {
+								const regexp = /^.+@.+\.[a-z]+$/i;
+								const value = event.target.value;
+								if (!value.match(regexp)) {
+									console.log(`${value} - ERROR!`);
+								}
+							},
 						}),
 					]
 				),

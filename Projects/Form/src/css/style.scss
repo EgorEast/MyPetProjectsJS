@@ -9,14 +9,16 @@ $primary-color: #333;
 	grid-template-columns: 1fr 1fr 1fr;
 
 	input {
-		border-color: black;
+		border-color: $primary-color;
 		font-size: 85%;
 		background: white;
 	}
 
 	button {
-		border-color: black;
+		border-color: $primary-color;
 		width: 70px;
+		background: $primary-color;
+		color: white;
 
 		&:disabled {
 			display: none;
@@ -24,10 +26,53 @@ $primary-color: #333;
 	}
 }
 
-.element-container {}
+.form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
 
-.form-header {
-	font-size: 300%;
-	font-weight: bold;
+	.form-header {
+		font-size: 300%;
+		font-weight: bold;
+	}
 
+	.register-button-container {
+		padding-top: 20px;
+	}
+
+	.error-field {
+		color: red,
+	}
+}
+
+.complete-message-container {
+	@extend .app;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-auto-rows: 100px;
+
+	.top-region-message {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row-start: 0;
+		grid-row-end: 1;
+	}
+
+	.complete-message {
+		display: block;
+		text-align: center;
+		font-size: 30px;
+		font-weight: bold;
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
+	.bottom-region-message {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
 }

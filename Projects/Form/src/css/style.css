@@ -1,4 +1,4 @@
-.app {
+.app, .complete-message-container {
   font: 100% Helvetica, sans-serif;
   color: #333;
   display: -ms-grid;
@@ -7,23 +7,85 @@
       grid-template-columns: 1fr 1fr 1fr;
 }
 
-.app input {
-  border-color: black;
+.app input, .complete-message-container input {
+  border-color: #333;
   font-size: 85%;
   background: white;
 }
 
-.app button {
-  border-color: black;
+.app button, .complete-message-container button {
+  border-color: #333;
   width: 70px;
+  background: #333;
+  color: white;
 }
 
-.app button:disabled {
+.app button:disabled, .complete-message-container button:disabled {
   display: none;
 }
 
-.form-header {
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form .form-header {
   font-size: 300%;
   font-weight: bold;
+}
+
+.form .register-button-container {
+  padding-top: 20px;
+}
+
+.form .error-field {
+  color: red;
+}
+
+.complete-message-container {
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: 100px;
+}
+
+.complete-message-container .top-region-message {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 0;
+      grid-row-start: 0;
+  grid-row-end: 1;
+}
+
+.complete-message-container .complete-message {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.complete-message-container .bottom-region-message {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 5;
 }
 /*# sourceMappingURL=style.css.map */

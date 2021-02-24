@@ -146,7 +146,7 @@ class App extends reactComponent {
 										value: this.state.phoneNumberField,
 										onChange: (event) => {
 											this.validate(
-												/^\+\d+/,
+												/^\+\d+$/,
 												event.target.value,
 												'phoneNumberField',
 												'Phone Number'
@@ -214,6 +214,11 @@ class App extends reactComponent {
 												'passwordField',
 												'Password'
 											);
+
+											if (this.state.repeatPasswordField !== event.target.value)
+												if (this.state.repeatPasswordField)
+													if (this.errorField === null)
+														this.errorField = 'Repeat Password';
 										},
 									}),
 								]
@@ -252,27 +257,32 @@ class App extends reactComponent {
 								]
 							),
 							ce(
-								'button',
+								'div',
 								{
-									key: `RegisterButton`,
-									className: `register-button`,
-									disabled: this.errorField || this.isValidForm(),
-									onClick: () => {
-										this.setState({ completedForm: true });
-									},
+									key: `RegisterButtonContainer`,
+									className: `register-button-container`,
 								},
-								'Register'
+								ce(
+									'button',
+									{
+										key: `RegisterButton`,
+										className: `register-button`,
+										disabled: this.errorField || this.isValidForm(),
+										onClick: () => {
+											this.setState({ completedForm: true });
+										},
+									},
+									'Register'
+								)
 							),
 						],
 						this.errorField &&
 							ce(
 								'div',
 								{
-									style: {
-										color: 'red',
-									},
+									className: 'error-field',
 								},
-								`Invalid data in the ${this.errorField} field`
+								`Invalid data in the '${this.errorField}' field`
 							)
 					),
 					ce('div', {
@@ -285,18 +295,26 @@ class App extends reactComponent {
 			return ce(
 				'div',
 				{
-					key: `CompleteMessage`,
-					className: `complete-message`,
+					key: `CompleteMessageContainer`,
+					className: `complete-message-container`,
 				},
 				[
+					ce('div', {
+						key: `topRegionMessage`,
+						className: `top-region-message`,
+					}),
 					ce(
 						'div',
 						{
-							key: `Message`,
-							className: `message`,
+							key: `CompleteMessage`,
+							className: `complete-message`,
 						},
 						'Registration completed successfully!'
 					),
+					ce('div', {
+						key: `bottomRegionMessage`,
+						className: `bottom-region-message`,
+					}),
 				]
 			);
 		}

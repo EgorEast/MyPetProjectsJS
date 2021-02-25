@@ -39,8 +39,8 @@ class App extends reactComponent {
 			return ce(
 				'div',
 				{
-					key: 'app',
-					className: 'app',
+					key: 'form',
+					className: 'form',
 				},
 				[
 					ce('div', {
@@ -50,8 +50,8 @@ class App extends reactComponent {
 					ce(
 						'div',
 						{
-							key: 'form',
-							className: 'form',
+							key: 'formContainer',
+							className: 'form-container',
 						},
 						ce(
 							'div',

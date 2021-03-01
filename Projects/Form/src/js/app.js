@@ -84,7 +84,7 @@ class App extends reactComponent {
 										value: this.state.firstNameField,
 										onChange: (event) => {
 											this.validate(
-												/^[A-Z][a-z]+$/,
+												/^[A-ZА-Я][a-zа-я]+$/,
 												event.target.value,
 												'firstNameField',
 												'First Name'
@@ -115,7 +115,7 @@ class App extends reactComponent {
 										value: this.state.lastNameField,
 										onChange: (event) => {
 											this.validate(
-												/^[A-Z][a-z]+$/,
+												/^[A-ZА-Я][a-zа-я]+$/,
 												event.target.value,
 												'lastNameField',
 												'Last Name'

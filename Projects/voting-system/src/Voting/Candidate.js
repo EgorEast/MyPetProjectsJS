@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import Context from '../context';
 
-function Candidate({ candidate, index }) {
+function Candidate({ candidate = {}, index = -1 }) {
+	const { setVote, vote } = useContext(Context);
+	const classes = [];
+
+	if (candidate.vote === vote.pro) classes.push('pro-candidate');
+	else if (candidate.vote === vote.against) classes.push('against-candidate');
 	return (
-		<div>
+		<div className={classes.join(' ')}>
 			<div className='candidate-image'>
 				<h2>
-					<strong>{index + 1}</strong>
+					<strong>{index}</strong>
 					{candidate.title}
 				</h2>
 			</div>
 			<div className='variants'>
-				<span className='input-container'>
-					<input type='checkbox' name='yesVariant' value='yes' /> Pro
-				</span>
-				<span className='input-container'>
-					<input type='checkbox' name='noVariant' value='no' /> Against
-				</span>
+				<input
+					type='radio'
+					name='variant'
+					id='variants'
+					onChange={() => setVote(candidate.id, vote.pro)}
+				/>
+				Pro
+				<input
+					type='radio'
+					name='variant'
+					id='variants'
+					onChange={() => setVote(candidate.id, vote.against)}
+				/>
+				Against
 			</div>
-			<button>Confirm</button>
 		</div>
 	);
 }

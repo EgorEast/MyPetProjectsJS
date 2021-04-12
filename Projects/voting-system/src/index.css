@@ -19,9 +19,13 @@ code {
 	text-align: center;
 }
 
-.pro-candidate {
+.pro-offer {
 	border: 5px solid green;
 }
-.against-candidate {
+.against-offer {
 	border: 5px solid red;
+}
+
+.offer-description {
+	padding: 15px;
 }
